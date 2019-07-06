@@ -1,0 +1,6 @@
+# 两组向量按照第一组的key排序，key：按照第一组向量中最接近val的顺序排序
+def my_sort(pre, tar, val):
+    c = list(zip(pre, tar))
+    c = sorted(c, key=lambda a: abs(a[:][0]-val))
+    tar[:], pre[:] = zip(*c)
+    return pre, tar
